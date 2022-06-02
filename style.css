@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#bod {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    list-style-type: None;
+    padding: 0;
+    gap: 40px;
+}
+
+
+button {
+    display:flex;
+    padding: 16px 10px;
+    width: 80px;
+    text-align: center;
+    margin: auto;
+}

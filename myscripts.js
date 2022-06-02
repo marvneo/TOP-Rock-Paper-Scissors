@@ -32,10 +32,10 @@ function playRound(playerSelection, computerSelection) {
 function game() {
 
     score = 0;
-    compScore = 4;
+    compScore = 0;
     
 
-    while (score < 5 && compScore < 5)  {
+    //while (score < 5 && compScore < 5)  {
 
         computerSelection = computerPlay()
         playerSelection = prompt('Please enter Rock, Paper or Scissors')
@@ -50,13 +50,14 @@ function game() {
             compScore ++;
         }
         console.log('Your score is '+score+'. The computer score is ' + compScore)
-    }
+  //  }
     
-    if (score > compScore) {
+  /*  if (score > compScore) {
         console.log('You won the game!')
     } else {
         console.log('You lost the game...')
     }
+    */
 
 }
 
