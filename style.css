@@ -2,6 +2,12 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
+    background-color: indigo;
+    margin: 0px;
+}
+
+div {
+
 }
 
 #bod {
@@ -14,17 +20,38 @@ body {
 #buttons {
     display: flex;
     flex-direction: row;
-    align-content: center;
     list-style-type: None;
-    padding: 0;
     gap: 40px;
 }
 
+#scoreboard {
+    font-size: 35px;
+    padding-bottom: 80px;
+
+}
+
+#information {
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 50px;
+
+}
 
 button {
     display:flex;
     padding: 16px 10px;
     width: 80px;
-    text-align: center;
-    margin: auto;
+    border-radius: 10px;
+}
+
+#rock {
+    border-color: red;
+}
+
+#paper {
+    border-color: blue;
+}
+
+#scissors {
+    border-color: yellow;
 }

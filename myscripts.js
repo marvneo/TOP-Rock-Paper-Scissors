@@ -9,14 +9,12 @@ function game() {
     click.addEventListener('click', function(e) {
         
         input = e.srcElement.id
-        
-        console.log(input)
+
         if (input != 'buttons') {
             playRound(input);
         }})    
+    
 
-    document.getElementById('player-score').innerHTML = score
-    document.getElementById('computer-score').innerHTML = compScore
 
 }    
 
@@ -72,12 +70,11 @@ function playRound(playerSelection) {
         }
     }
 
+    const scoreboard = document.getElementById('scoreboard')
+    scoreboard.textContent = 'Your score is ' + score + '. Compuer score is ' + compScore + '.'
+
     const notification = document.getElementById('information')
-
     notification.textContent = 'You selected ' + playerSelection +'. Computer selected ' + computerSelection + '.'
-
-    document.getElementById('player-score').innerHTML = score
-    document.getElementById('computer-score').innerHTML = compScore
 
     if (score === 5 || compScore === 5) {
         announceWinner(score,compScore)
@@ -88,15 +85,19 @@ function playRound(playerSelection) {
 
 // Anounces winner through browser alert
 function announceWinner(score, compScore) {
-    if (score > compScore) {
-        alert('You win!')
-    } else {
-        alert('Computer won!')
-    }
 
     const notification = document.getElementById('information')
 
-    notification.textContent = 'Game over, better luck next time.'
+    if (score > compScore) {
+        alert('You win!')
+        notification.textContent = 'Congrats!'
+    } else {
+        alert('Computer won!')
+        notification.textContent = 'Game over, better luck next time.'
+    }
+
+
+   
 
 
 }
