@@ -1,13 +1,21 @@
-score = 0;
-compScore = 0;
 
+function game() {
+
+    score = 0;
+    compScore = 0;
      
-const click = document.querySelector('#buttons');
+    const click = document.querySelector('#buttons');
 
-click.addEventListener('click', function(e) {
-    playRound(e.srcElement.id);
-    })    
-        
+    click.addEventListener('click', function(e) {
+        playRound(e.srcElement.id);
+        })    
+
+    document.getElementById('player-score').innerHTML = score
+    document.getElementById('computer-score').innerHTML = compScore
+
+}    
+
+
 // Outputs the computer's choice
 function computerPlay() {
 
@@ -21,6 +29,7 @@ function computerPlay() {
         return 'scissors'
     }
 }
+
 
 // Determine who wins 
 function whoWins(playerSelection, computerSelection) {
@@ -45,27 +54,35 @@ function whoWins(playerSelection, computerSelection) {
 function playRound(playerSelection) {
 
 
-        computerSelection = computerPlay()
+    computerSelection = computerPlay()
         
-        if (playerSelection === computerSelection) {
-            console.log('It\'\s a draw!')
+    if (playerSelection === computerSelection) {
+        console.log('It\'\s a draw!')
+    } else {
+        win = whoWins(playerSelection, computerSelection)
+        if (win) {
+            console.log('You win!')
+            score ++;
         } else {
-            win = whoWins(playerSelection, computerSelection)
-            if (win) {
-                console.log('You win!')
-                score ++;
-            } else {
-                console.log('You lost!')
-                compScore ++;
-            }
+            console.log('You lost!')
+            compScore ++;
         }
+    }
 
-        
-        console.log('Computer chose ' + computerSelection, '. You chose ' + playerSelection)
+    document.getElementById('player-score').innerHTML = score
+    document.getElementById('computer-score').innerHTML = compScore
 
-        
-        console.log('Your score is '+score+'. The computer score is ' + compScore)
+    if (score === 5 || compScore === 5) {
+        if (score > compScore) {
+            alert('You win!')
+        } else {
+            alert('Computer won!')
+        }
     }
 
 
+    
+}
 
+
+game()
