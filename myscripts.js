@@ -71,7 +71,7 @@ function playRound(playerSelection) {
     }
 
     const scoreboard = document.getElementById('scoreboard')
-    scoreboard.textContent = 'Your score is ' + score + '. Compuer score is ' + compScore + '.'
+    scoreboard.textContent = 'Your score is ' + score + '. Computer score is ' + compScore + '.'
 
     const notification = document.getElementById('information')
     notification.textContent = 'You selected ' + playerSelection +'. Computer selected ' + computerSelection + '.'

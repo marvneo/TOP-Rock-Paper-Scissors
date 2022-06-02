@@ -6,9 +6,6 @@ body {
     margin: 0px;
 }
 
-div {
-
-}
 
 #bod {
     display:flex;
@@ -38,7 +35,6 @@ div {
 }
 
 button {
-    display:flex;
     padding: 16px 10px;
     width: 80px;
     border-radius: 10px;
