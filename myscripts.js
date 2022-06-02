@@ -62,7 +62,7 @@ function playRound(playerSelection) {
     computerSelection = computerPlay()
         
     if (playerSelection === computerSelection) {
-        console.log('It\'\s a draw!')
+        message = 'It\'\s a draw!'
     } else {
         win = whoWins(playerSelection, computerSelection)
         if (win) {
@@ -71,6 +71,10 @@ function playRound(playerSelection) {
             compScore ++;
         }
     }
+
+    const notification = document.getElementById('information')
+
+    notification.textContent = 'You selected ' + playerSelection +'. Computer selected ' + computerSelection + '.'
 
     document.getElementById('player-score').innerHTML = score
     document.getElementById('computer-score').innerHTML = compScore
@@ -89,6 +93,12 @@ function announceWinner(score, compScore) {
     } else {
         alert('Computer won!')
     }
+
+    const notification = document.getElementById('information')
+
+    notification.textContent = 'Game over, better luck next time.'
+
+
 }
 
 
