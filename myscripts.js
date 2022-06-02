@@ -7,8 +7,13 @@ function game() {
     const click = document.querySelector('#buttons');
 
     click.addEventListener('click', function(e) {
-        playRound(e.srcElement.id);
-        })    
+        
+        input = e.srcElement.id
+        
+        console.log(input)
+        if (input != 'buttons') {
+            playRound(input);
+        }})    
 
     document.getElementById('player-score').innerHTML = score
     document.getElementById('computer-score').innerHTML = compScore
@@ -61,10 +66,8 @@ function playRound(playerSelection) {
     } else {
         win = whoWins(playerSelection, computerSelection)
         if (win) {
-            console.log('You win!')
             score ++;
         } else {
-            console.log('You lost!')
             compScore ++;
         }
     }
@@ -73,15 +76,19 @@ function playRound(playerSelection) {
     document.getElementById('computer-score').innerHTML = compScore
 
     if (score === 5 || compScore === 5) {
-        if (score > compScore) {
-            alert('You win!')
-        } else {
-            alert('Computer won!')
-        }
+        announceWinner(score,compScore)
     }
 
+}
 
-    
+
+// Anounces winner through browser alert
+function announceWinner(score, compScore) {
+    if (score > compScore) {
+        alert('You win!')
+    } else {
+        alert('Computer won!')
+    }
 }
 
 
